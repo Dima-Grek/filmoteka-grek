@@ -51,6 +51,7 @@ button {
 
 .nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-right: auto;
@@ -58,6 +59,11 @@ button {
 
 .menu {
     display: inline-flex;
+}
+
+.menu-item:not(:last-child) {
+    padding-right: 39px;
+    padding-bottom: 41px;
 }
 
 .img-bg-header {
@@ -84,31 +90,102 @@ button {
     color: #ffffff;
 }
 
-.info-header {
-    color: #ffffff;
+.header-link {
+    text-decoration: none;
     font-weight: 500;
     font-size: 14px;
-    line-height: 0.88;
+    line-height: 1.17;
     letter-spacing: 0.02em;
-    padding-right: 10px;
-}
-
-.info {
     color: #ffffff;
-    line-height: 1.71;
-    letter-spacing: 0.03em;
+    display: block;
+    position: relative;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: var(--cubic-bezier);
 }
 
-form.example input[type=text] {
-    padding: 37px;
-    font-size: 14px;
-    align-items: center;
-    color: #FFFFFF;
-    border: none 0.5px #FFFFFF;
-    float: center;
-    width: 77%;
+.active-link:hover::after {
+    opacity: 1;
+    fill: var(--link-alt-color);
 }
+
+.active-link::after {
+    content: " ";
+    width: 100%;
+    height: 3px;
+    background-color: #FF6B08;
+    display: block;
+    position: absolute;
+    opacity: 1;
+    transition-duration: 250ms;
+    transition-timing-function: var(--cubic-bezier);
+}
+
+.active-link:hover,
+.active-link:focus {
+    color: #FFFFFF;
+}
+
+.link:hover,
+.link:focus {
+    color: #FFFFFF;
+}
+
+.active-link {
+    color: #FFFFFF;
+}
+
+
+/*form.example input[type=text] {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #0b7dda;
+}
+
 
 .input {
     display: flex;
 }
+*/
+
+.form-search {
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+    padding-bottom: 102px;
+}
+
+.form-search input {
+    all: unset;
+    text-decoration-color: #FFFFFF;
+    border-bottom: 0.5px solid #ffffff;
+    width: 20%;
+}
+
+.form-search ::placeholder {
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.form-search submit {}
